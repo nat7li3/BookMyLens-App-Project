@@ -111,7 +111,7 @@ This project demonstrates full-stack development, database design, and API integ
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/bookmylens.git
+git clone https://github.com/nat7li3/BookMyLens-App-Project.git
 cd bookmylens
 ```
 
