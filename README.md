@@ -1,6 +1,3 @@
-# BookMyLens-App-Project
-BookMyLens is a full-stack web application designed to streamline the process of discovering, customizing, and booking photography services.
-
 # BookMyLens
 
 ![Node.js](https://img.shields.io/badge/Node.js-18+-green?logo=node.js)
@@ -11,11 +8,34 @@ BookMyLens is a full-stack web application designed to streamline the process of
 
 ---
 
+## Description
+
+BookMyLens is a full-stack web application designed to streamline the process of discovering, customizing, and booking photography services. The platform allows customers and photographers to create listings, communicate, and negotiate photography packages through an integrated system.
+
+This project demonstrates full-stack development, REST API design, relational database modeling, and user authentication.
+
+---
+
 ## Overview
 
-BookMyLens is a full-stack photography booking platform that connects customers and photographers through customizable packages, messaging, and negotiation features.
+BookMyLens connects customers and photographers through customizable packages, messaging, and negotiation features.
 
-This project demonstrates full-stack development, database design, and API integration.
+---
+
+## Quick Start
+
+Run the following commands to start the project:
+
+```bash
+npm install
+node server.js
+```
+
+Then open:
+
+```plaintext
+home_page.html
+```
 
 ---
 
@@ -34,21 +54,21 @@ This project demonstrates full-stack development, database design, and API integ
 
   * Add-ons
   * Location
-  * Number of people 
+  * Number of people
 * Live preview before submission
 
 ### Browse Packages
 
 * Filter by category and location
 * View community-created packages
-* Pre-built event templates 
+* Pre-built event templates
 
 ### Messaging System
 
 * Chat between users
 * Conversation history
 * Linked packages inside chats
-* Negotiation via proposals 
+* Negotiation via proposals
 
 ### Proposal System
 
@@ -66,15 +86,18 @@ This project demonstrates full-stack development, database design, and API integ
 
 ### Frontend
 
-* HTML, CSS, JavaScript 
+* HTML
+* CSS
+* JavaScript
 
 ### Backend
 
-* Node.js with Express 
+* Node.js
+* Express
 
 ### Database
 
-* MySQL (Relational)
+* MySQL
 
 ### Dependencies
 
@@ -82,27 +105,7 @@ This project demonstrates full-stack development, database design, and API integ
 * mysql2
 * bcrypt
 * cors
-* dotenv
-* body-parser 
-
----
-
-## Database Design
-
-### Core Tables
-
-* customer
-* photographer
-* packages
-* addons
-* saved_packages
-* messages
-* proposals
-
-### Lookup Tables
-
-* categories
-* locations
+* body-parser
 
 ---
 
@@ -112,8 +115,10 @@ This project demonstrates full-stack development, database design, and API integ
 
 ```bash
 git clone https://github.com/nat7li3/BookMyLens-App-Project.git
-cd bookmylens
+cd BookMyLens-App-Project
 ```
+
+---
 
 ### 2. Install Dependencies
 
@@ -121,52 +126,64 @@ cd bookmylens
 npm install
 ```
 
+This will automatically create the `node_modules` folder.
+
+---
+
 ### 3. Setup MySQL Database
+
+Make sure MySQL is installed and running.
+
+Run the following command in MySQL:
 
 ```sql
 CREATE DATABASE software_engineering;
 ```
 
-Run your schema file to create tables.
+Then execute the SQL script provided in:
 
----
-
-### 4. Configure Environment Variables
-
-Create a `.env` file:
-
-```env
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=your_password
-DB_NAME=software_engineering
+```plaintext
+SQL.txt
 ```
 
 ---
 
-### 5. Start Server
+### 4. Configure Database Connection
+
+Open `server.js` and ensure the database credentials match your local MySQL setup:
+
+```js
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'your_password_here',
+    database: 'software_engineering'
+});
+```
+
+---
+
+### 5. Start the Server
 
 ```bash
 node server.js
 ```
 
-Server runs on:
+You should see:
 
 ```plaintext
-http://localhost:3000
+Server running at http://localhost:3000
 ```
 
 ---
 
-### 6. Run Frontend
+### 6. Run the Frontend
 
-Open in browser:
+Open the application manually by opening this file in your browser:
 
 ```plaintext
 home_page.html
 ```
-
-
 
 ---
 
@@ -174,7 +191,7 @@ home_page.html
 
 ### Authentication
 
-```plaintext
+```
 POST /customer/register
 POST /customer/login
 POST /photographer/register
@@ -183,7 +200,7 @@ POST /photographer/login
 
 ### Messaging
 
-```plaintext
+```
 POST /send-message
 GET /get-messages
 GET /conversations
@@ -191,7 +208,7 @@ GET /conversations
 
 ### Packages
 
-```plaintext
+```
 POST /package/create
 GET /packages/browse
 ```
@@ -201,27 +218,22 @@ GET /packages/browse
 ## Project Structure
 
 ```plaintext
-bookmylens/
+BookMyLens-App-Project/
 │
-├── frontend/
-│   ├── home_page.html
-│   ├── browse_packages.html
-│   ├── create_package.html
-│   ├── chat.html
-│   ├── login.html
-│   ├── customer_register.html
-│   ├── photographer_register.html
-│   ├── style.css
-│   └── script.js
-│
-├── backend/
-│   └── server.js
-│
-├── database/
-│   └── schema.sql
-│
+├── browse_packages.html
+├── chat.html
+├── create_package.html
+├── customer_register.html
+├── home_page.html
+├── login.html
+├── photographer_register.html
+├── style.css
+├── script.js
+├── server.js
+├── SQL.txt
 ├── package.json
-└── README.md
+├── package-lock.json
+├── README.md
 ```
 
 ---
@@ -230,12 +242,6 @@ bookmylens/
 
 * Password hashing with bcrypt
 * Basic validation on API endpoints
-
-Recommended improvements:
-
-* JWT authentication
-* Input sanitization
-* HTTPS deployment
 
 ---
 
@@ -267,7 +273,15 @@ ISC License
 
 ---
 
+## Notes
+
+* The `node_modules` folder is not included in this repository and is automatically generated using `npm install`.
+* Ensure MySQL credentials match your local setup before running the server.
+
+---
+
 ## Support
 
-If you find this project useful, consider starring or contributing.
+If you find this project useful, consider starring the repository.
+
 
